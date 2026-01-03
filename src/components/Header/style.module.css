@@ -1,0 +1,10 @@
+.Header{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.Wrapper{
+  display: flex;
+  justify-content: space-between;
+}
