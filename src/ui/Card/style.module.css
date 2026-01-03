@@ -1,0 +1,37 @@
+.Article{
+  width: 555px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  font-size: 24px;
+
+}
+
+.imgWrapper{
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+
+  img{
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.infoWrapper{
+  width: 300px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  p+p{
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+  }
+}
