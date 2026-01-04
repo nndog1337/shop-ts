@@ -13,7 +13,7 @@ const Button = (Props: Button) => {
     type
   } = Props
   return (
-    <button type={type} className={`${styles.Button} ${className}`}>{children}</button>
+    <button type={type} className={`${className} ${styles.Button} `}>{children}</button>
   )
 }
 

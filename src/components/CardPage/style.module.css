@@ -1,0 +1,50 @@
+.main{
+  margin-top: 100px;
+}
+.info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.imageWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px 10px;
+
+  img{
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.name{
+  width: 800px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  font-size: 32px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px 10px;
+}
+
+.desc{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  font-size: 32px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px 10px;
+}
+
+.Buy{
+  width: 80%;
+  margin-inline: auto;
+}
