@@ -12,7 +12,7 @@ const Header = () => {
         <div className={styles.Wrapper}>
           <Logo/>
           <Nav/>
-          <Button type="button" children={'Корзина'}/>
+          <Button type="button" children={'Корзина'} className={styles.button}/>
         </div>
       </div>
     </header>

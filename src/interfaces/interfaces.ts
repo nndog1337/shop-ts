@@ -7,3 +7,5 @@ export interface IProduct{
   rating: {rate: number, count: number}
   title: string
 }
+
+export type addProduct = Omit<IProduct, 'rating'>

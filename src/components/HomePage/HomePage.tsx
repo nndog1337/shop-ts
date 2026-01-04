@@ -2,10 +2,10 @@
 import SectionProduct from '../../ui/SectionProduct/SectionProduct'
 import styles from './style.module.css'
 import { useEffect, useState } from 'react'
-import { Products } from '../../Api/Api'
+import { fetchProducts } from '../../Api/Api'
 import {Img} from '../imagesArray/imagesArray'
-import type { IProduct } from '../../interfaces/interfaces'
 import Card from '../../ui/Card/Card'
+import type { IProduct } from '../../interfaces/interfaces'
 
 const Home = () => {
   const [products, setProducts] = useState<IProduct[]>([])
@@ -16,7 +16,7 @@ const Home = () => {
     const data = async() => {
       try{
         setIsLoading(true)
-        const res = await Products()
+        const res = await fetchProducts(10)
         setProducts(res)
       }
       catch(e){
@@ -29,6 +29,9 @@ const Home = () => {
     data()
   },[])
 
+  
+
+
   return (
     <main >
       <div className='container'>
@@ -36,7 +39,10 @@ const Home = () => {
           {Img.map(img =>(<SectionProduct key={img.src} src={`${img.src}`} children={img.title} link={`${img.link}`}/>))}
         </section>
         <section className={styles.cards}>
-          {products.map(product =>(<Card key={product.id} src={`${product.image}`} title={product.title} price={product.price}/>))}
+          {error ? <p style={{textAlign: 'center', fontSize: '32px'}}>Error...</p> :
+          isLoading 
+          ? <p style={{textAlign: 'center', fontSize: '32px'}}>Loading...</p> 
+          : products.map(product =>(<Card key={product.id} src={`${product.image}`} title={product.title} price={product.price} id={product.id}/>))}
         </section>
       </div>
     </main>
