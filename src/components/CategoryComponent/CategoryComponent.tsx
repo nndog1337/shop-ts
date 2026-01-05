@@ -57,7 +57,7 @@ const CategoryComponent = (Props: CategoryComponentProps) => {
     <main>
       <div className="container">
         <div className={styles.wrapper}>
-          {products.map(product =>(<Card key={product.id} src={`${product.image}`} title={product.title} price={product.price} id={product.id}/>))}
+          {products.map(product =>(<Card key={product.id} product={product}/>))}
         </div>
       </div>
     </main>

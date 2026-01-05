@@ -1,28 +1,24 @@
 import { Link } from 'react-router'
 import styles from './style.module.css'
 import Button from '../Button/Button'
+import type { IProduct } from '../../interfaces/interfaces'
+import { useCart } from '../../components/Provider/Context'
 
-interface CardProps{
-  src: string
-  title: string
-  price: number
-  id?: number
-}
 
-const Card = (Props: CardProps) => {
-  const {
-    src,
-    title,
-    price,
-    id
-  } = Props
-  const priceButton = `${price}$`
+
+const Card = ({product}: {product:IProduct}) => {
+  const priceButton = `${product.price}$`
+  const { addToCart } = useCart()
+  
+  const handleAddToCart = () => {
+    addToCart(product)
+  }
   return (
     <article className={styles.Article}>
-      <div className={styles.imgWrapper}><Link to={`/card/${id}`}><img src={src} alt="" /></Link></div>
+      <div className={styles.imgWrapper}><Link to={`/card/${product.id}`}><img src={product.image} alt="" /></Link></div>
       <div className={styles.infoWrapper}>
-        <Link to={`/card/${id}`}><p>{title}</p></Link>
-        <Button type='button' children={priceButton} className={styles.button}/>
+        <Link to={`/card/${product.id}`}><p>{product.title}</p></Link>
+        <Button type='button' children={priceButton} className={styles.button} onClick={handleAddToCart}/>
       </div>
     </article>
   )
