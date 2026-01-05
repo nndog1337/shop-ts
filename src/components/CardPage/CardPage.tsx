@@ -65,7 +65,7 @@ const CardPage = (Props:CardPageProps) => {
           <div className={styles.name}>
             <p>Title: {product?.title}</p>
             <p>Price: {product?.price}</p>
-            <p>Rating: {product?.rating.rate}/5</p>
+            <p>Rating: {product?.rating?.rate}/5</p>
             <Button type='button' children={priceButton} className={styles.Buy}/>
           </div>
         </div>

@@ -1,7 +1,7 @@
-import menImg from '../../../public/men.jpg'
-import womenImg from '../../../public/women.jpg'
-import jeweleryImg from '../../../public/jewelery.jpg'
-import electronicImg from '../../../public/electronic.png'
+import menImg from '/public/men.jpg'
+import womenImg from '/public/women.jpg'
+import jeweleryImg from '/public/jewelery.jpg'
+import electronicImg from '/public/electronic.png'
 
 export const Img = [
   {
