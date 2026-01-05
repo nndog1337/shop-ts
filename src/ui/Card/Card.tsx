@@ -6,7 +6,7 @@ interface CardProps{
   src: string
   title: string
   price: number
-  id: number
+  id?: number
 }
 
 const Card = (Props: CardProps) => {

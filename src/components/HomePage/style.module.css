@@ -11,3 +11,13 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+.buttonWrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button{
+  padding: 5px 10px;
+}
