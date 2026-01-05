@@ -68,7 +68,7 @@ const Home = () => {
           {error ? <p style={{textAlign: 'center', fontSize: '32px'}}>Error...</p> :
           isLoading 
           ? <p style={{textAlign: 'center', fontSize: '32px'}}>Loading...</p> 
-          : products.map(product =>(<Card key={product.id} src={`${product.image}`} title={product.title} price={product.price} id={product.id }/>))}
+          : products.map(product =>(<Card key={product.id} product={product}/>))}
         </section>
       </div>
     </main>

@@ -1,0 +1,54 @@
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+.product{
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 5px 10px;
+
+  img{
+    width: 100px;
+  }
+}
+
+.productInfo{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quantityControls{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cartSum{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sumButtons{
+  display: flex;
+  gap: 20px;
+}
+
+.emptyCart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 24px;
+}
