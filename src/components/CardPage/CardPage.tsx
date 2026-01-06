@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import type { IProduct } from "../../interfaces/interfaces"
 import { fetchProduct } from "../../Api/Api"
 import Button from '../../ui/Button/Button'
+import { useCart } from '../Provider/Context'
 
 interface CardPageProps{
   id:number
@@ -16,6 +17,12 @@ const CardPage = (Props:CardPageProps) => {
   const [product, setProduct] = useState<IProduct | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+
+  const { cart, addToCart } = useCart()
+
+  const handleAddToCart = () => {
+    addToCart(product!)
+  }
 
   const priceButton = `${product?.price}$`
 
@@ -66,7 +73,9 @@ const CardPage = (Props:CardPageProps) => {
             <p>Title: {product?.title}</p>
             <p>Price: {product?.price}</p>
             <p>Rating: {product?.rating?.rate}/5</p>
-            <Button type='button' children={priceButton} className={styles.Buy}/>
+            {cart.find(({id}) => id === product?.id) 
+              ? <Button type='button' children={'В корзине'} className={`${styles.button} ${styles.buttonActive}`} onClick={handleAddToCart}/> 
+              : <Button type='button' children={priceButton} className={styles.button} onClick={handleAddToCart}/>}
           </div>
         </div>
         <p className={styles.desc}>{product?.description}</p>
