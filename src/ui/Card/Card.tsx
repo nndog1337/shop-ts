@@ -8,7 +8,7 @@ import { useCart } from '../../components/Provider/Context'
 
 const Card = ({product}: {product:IProduct}) => {
   const priceButton = `${product.price}$`
-  const { addToCart } = useCart()
+  const { cart, addToCart } = useCart()
   
   const handleAddToCart = () => {
     addToCart(product)
@@ -18,7 +18,9 @@ const Card = ({product}: {product:IProduct}) => {
       <div className={styles.imgWrapper}><Link to={`/card/${product.id}`}><img src={product.image} alt="" /></Link></div>
       <div className={styles.infoWrapper}>
         <Link to={`/card/${product.id}`}><p>{product.title}</p></Link>
-        <Button type='button' children={priceButton} className={styles.button} onClick={handleAddToCart}/>
+        {cart.find(({id}) => id === product.id) 
+        ? <Button type='button' children={'В корзине'} className={`${styles.button} ${styles.buttonActive}`} onClick={handleAddToCart}/> 
+        : <Button type='button' children={priceButton} className={styles.button} onClick={handleAddToCart}/>}
       </div>
     </article>
   )

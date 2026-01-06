@@ -5,6 +5,7 @@ interface InputProps{
   placeholder: string
   className?: string
   value?: string
+  required?: boolean
   onChange?:(e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -14,10 +15,11 @@ const Input = (Props: InputProps) => {
     placeholder,
     className,
     value,
-    onChange
+    onChange,
+    required=false
   } = Props
   return (
-    <input className={className} type={type} placeholder={placeholder} value={value} onChange={onChange} />
+    <input className={className} type={type} placeholder={placeholder} value={value} onChange={onChange} required={required} />
   )
 }
 

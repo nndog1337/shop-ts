@@ -8,3 +8,6 @@ export interface IProduct{
   title: string
 }
 
+export interface CartProps {
+  product: IProduct & { quantity: number }
+}

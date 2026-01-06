@@ -1,0 +1,26 @@
+.product{
+  display: flex;
+  justify-content: space-evenly;
+  width: 600px;
+  gap: 30px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 5px 10px;
+
+  img{
+    width: 100px;
+  }
+}
+
+.productInfo{
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quantityControls{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
